@@ -1,0 +1,185 @@
+/* Global Rules  */
+* {
+    box-sizing: border-box;
+}
+:root {
+/* Primary colors  */
+    --Gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+/* Secondary colors  */
+    --Pale-Blue: hsl(243, 100%, 93%);
+    --Grayish-Blue: hsl(229, 7%, 55%);
+    --Dark-Blue: hsl(228, 56%, 26%);
+    --Very-Dark-Blue: hsl(229, 57%, 11%);
+}
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: var(--Very-Dark-Blue);
+    background-image: url(../images/bg-desktop.png);
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    background-size: contain;
+    min-height: 100vh;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    align-items: flex-end;
+    gap: 25px;
+}
+.container .card-1 {
+    width: 350px;
+    height: 200px;
+    background-color: var(--Dark-Blue);
+    border-radius: 10px;
+    border-top-right-radius: 100px;
+
+}
+.container .cont {
+    margin: 40px 50px;
+}
+.container .card-1 .cont .first {
+    display: grid;
+    grid-gap: 25px;
+}
+.container .card-1 .cont .first .imports {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.container .card-1 .cont .first .imports img {
+    border-radius: 10px;
+    background-color: var(--Very-Dark-Blue);
+    padding: 15px;
+}
+.container .card-1 .cont .first .imports img:nth-child(2) {
+    padding: 16px;
+}
+.container .card-1 .cont .first .imports img:last-child {
+    padding: 17px;
+}
+.container .card-2 {
+    width: 600px;
+    height: 150px;
+    background-color: var(--Dark-Blue);
+    border-radius: 10px;
+}
+.container .card-2 .reminder {
+    width: 150px;
+    height: 70px;
+    background-color: white;
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.container .card-2 .reminder:before {
+    content: " ";
+    border-width: 10px;
+    border-style: solid;
+    border-color: white white transparent transparent;
+    position: absolute;
+    top: 100%;
+    right: 0;
+}
+.container .card-2 .reminder span:first-child {
+    font-size: 35px;
+    font-weight: 800;
+}
+.container .card-2 .reminder span:last-child {
+    color: var(--Grayish-Blue);
+    font-size: 12px;
+    font-weight: bold;
+}
+.container .cont .last p {
+    color: var(--Pale-Blue);
+}
+.container .cont .last span {
+    color: white;
+    font-weight: 800;
+}
+.container .cont .last .bar {
+    width: 500px;
+    height: 20px;
+    background-color: var(--Very-Dark-Blue);
+    border-radius: 50px;
+    padding: 3px;
+}
+.container .cont .last .bar .bar-color {
+    width: 350px;
+    height: 15px;
+    background: linear-gradient(90deg ,hsl(6, 100%, 80%) , hsl(335, 100%, 65%));
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.container .cont .last .bar .bar-color .ball {
+    width: 12px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: white;
+    margin-left: 3px ;
+    margin-right: 3px ;
+
+}
+.container .cont .last .range {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+@media (max-width: 767px) {
+    body {
+        background-size: cover;
+        background-image: url(../images//bg-mobile.png);
+        background-position: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        flex-direction: column;
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .container .cont {
+        margin: 0;
+    }
+    .container .card-1 .cont .first {
+        padding: 15px;
+    }
+    .container .card-1,
+    .container .card-2 {
+        width: 100%;
+        padding: 20px;
+    }
+    .container .cont .last .bar {
+        width: 100%;
+    }
+    .container .cont .last .bar .bar-color {
+        width: 100%;
+    }
+    .container .card-2 .reminder {
+        border-bottom-right-radius: inherit;
+        width: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 90%;
+    }
+    .container .card-2 .reminder:before {
+        content: none;
+    }
+}
